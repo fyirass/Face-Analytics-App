@@ -25,7 +25,7 @@ SECRET_KEY = 'y2!nc-hr+26tl7rx#p-_oc6yednw8&hv^!-cfg%o*=_@kg_efa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','deepfacesuite.com']
+ALLOWED_HOSTS = ['https://aaceanalyticstest.azurewebsites.net']
 
 
 # Application definition
@@ -135,3 +135,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
