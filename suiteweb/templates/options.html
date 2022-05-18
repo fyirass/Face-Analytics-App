@@ -1,43 +1,141 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>select options</title>
-    <style>
-        #button1{
-            width: 300px;
-            height: 40px;
-        }
-        #button2{
-            width: 300px;
-            height: 40px;
-            margin-top: 10px;
-        }
-        #container{
-            text-align: center;
-            margin-top: 200px;
-            margin-bottom: 20px;
-        }
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div id="container">
+
+
+    <!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>best face analytics app <span>deep</span>face</h3>
+        <p>DeepFace is a face recognition solution capable of detecting people's morphological parameters such as age, gender, emotion, ethnicity and even their names by analyzing and train Pictures</Picture>.</p>
+        <div>
         <form method="post" action="verify/">
-            {% csrf_token %}
-            <button type="button home-button" id="button1" >Verify</button>
-         </form>
-    <form  method="post" action="train/">
+                {% csrf_token %}
+                <button type="button home-button" class="btn"  >Try It Now</button>
+        </form>
+    </div>
+    <div class="image">
+    <form  method="post" action="train/" >
         {% csrf_token %}
-        <button type="button contact-button" id="button2">Train</button>
+        <button type="button contact-button" class="btn" >Train</button>
     </form>
     </div>
-</body>
+    </div>
+
+    <div class="image">
+        <img src="{% static 'images/home1.svg' %}" alt="">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+
+
+
+    <!-- solution section starts  -->
+
+    <section class="about" id="solution">
+
+        <h1 class="heading"> Solution </h1>
+    
+        <div class="column">
+    
+            <div class="image">
+                <img src="images/about-img.png" alt="">
+            </div>
+    
+            <div class="content">
+                <h3>How DeepFace works?</h3>
+                <p>DeepFace model begins by using aligned versions of several existing databases to improve the algorithms and produce a normalized output. However, these models are insufficient to produce effective facial recognition in all instances. DeepFace uses fiducial point detectors based on existing databases to direct the alignment of faces. The facial alignment begins with a 2D alignment and then continues with 3D alignment and frontalization.</p>
+                <p>DeepFace’s process is two steps. First, it corrects the angles of an image so that the face in the photo is looking forward. To accomplish this, it uses a 3-D model of a face. Then the deep learning produces a numerical description of the face. If DeepFace comes up with a similar enough description for two images, it assumes that these two images share a face.</p>
+                <div class="image">
+                    <img src="{% static 'images/deepface1.png' %}" alt="">
+                </div>    
+            </div>
+    
+        </div>
+    
+    </section>
+    
+    <!-- solution section ends -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <!-- target section starts  -->
+    
+        <section class="features" id="target">
+    
+            <h1 class="heading"> Target </h1>
+    
+            <div class="box-container">
+    
+                <div class="box">
+                    <img src="{% static 'images/gender.png' %}" alt="">
+                    <h3>Gender detection</h3>
+                    <p>DeepFace is able to detect wether you are a man or a woman</p>
+                    
+                </div>
+    
+                <div class="box">
+                    <img src="{% static 'images/age.png' %}" alt="">
+                    <h3>Age estimation</h3>
+                    <p>Obtain an age estimation with DeepFace and set up by yourself the accuracy of the age estimation in order to meet your goals.</p>
+                    
+                </div>
+    
+                <div class="box">
+                    <img src="{% static 'images/race.jpg' %}" alt="">
+                    <h3>Race recognition</h3>
+                    <p>Know your ethnicity and share it with your friends.</p>
+                    
+                </div>
+    
+            </div>
+    
+    </section>
+    
+    <!-- target section ends -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- footer section starts  -->
+    
+    <div class="footer">
+    
+        <div class="box-container">
+    
+          
+        </div>
+    
+        <h1 class="credit">Created by Firas Mansour </h1>
+    
+    </div>
+    
+    <!-- footer section ends -->
+    
+    
+    
+    </body>
+   
 </html>
 {% endblock %}
